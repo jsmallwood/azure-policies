@@ -1,0 +1,32 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Require a pattern for CIID Tag value on Resource Groups",
+  "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/a8b7290b-8363-4333-81d5-041ac3b2c81c/providers/Microsoft.Authorization/policyDefinitions/c62bde75-14db-467c-93a8-d0b173f4127f",
+  "scope": "/providers/Microsoft.Management/managementGroups/a8b7290b-8363-4333-81d5-041ac3b2c81c",
+  "notScopes": [],
+  "parameters": {
+   "tagName": {
+    "value": "CIID"
+   },
+   "effectType": {
+    "value": "deny"
+   }
+  },
+  "metadata": {
+   "assignedBy": "Jason Smallwood",
+   "parameterScopes": {},
+   "createdBy": "0657932d-6322-4410-b062-c9f117e63087",
+   "createdOn": "2021-04-30T16:58:39.8884515Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/a8b7290b-8363-4333-81d5-041ac3b2c81c/providers/Microsoft.Authorization/policyAssignments/8a765cb719e84883b9233585",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "8a765cb719e84883b9233585"
+}

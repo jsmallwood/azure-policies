@@ -1,0 +1,32 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "properties": {
+  "displayName": "Require a non-null value a Tag on resource groups",
+  "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/a8b7290b-8363-4333-81d5-041ac3b2c81c/providers/Microsoft.Authorization/policyDefinitions/e38b2d99-97ba-41d4-9268-395966374d32",
+  "scope": "/providers/Microsoft.Management/managementGroups/a8b7290b-8363-4333-81d5-041ac3b2c81c",
+  "notScopes": [],
+  "parameters": {
+   "tagName": {
+    "value": "Application"
+   },
+   "effectType": {
+    "value": "deny"
+   }
+  },
+  "metadata": {
+   "assignedBy": "Jason Smallwood",
+   "parameterScopes": {},
+   "createdBy": "0657932d-6322-4410-b062-c9f117e63087",
+   "createdOn": "2021-04-30T14:28:35.4315273Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/a8b7290b-8363-4333-81d5-041ac3b2c81c/providers/Microsoft.Authorization/policyAssignments/a53b18e621d94d4ca67ff005",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "a53b18e621d94d4ca67ff005"
+}
