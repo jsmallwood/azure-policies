@@ -8,8 +8,8 @@
    "category": "Tags",
    "createdBy": "d1c06f51-82a8-44e8-b35e-01a428a9c890",
    "createdOn": "2020-12-09T19:29:43.173065Z",
-   "updatedBy": "d1c06f51-82a8-44e8-b35e-01a428a9c890",
-   "updatedOn": "2021-03-15T19:06:44.0509596Z"
+   "updatedBy": "0657932d-6322-4410-b062-c9f117e63087",
+   "updatedOn": "2021-05-03T19:31:43.9368879Z"
   },
   "parameters": {
    "tagName": {
@@ -30,11 +30,15 @@
      {
       "field": "[concat('tags[', parameters('tagName'), ']')]",
       "equals": ""
+     },
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "equals": " "
      }
     ]
    },
    "then": {
-    "effect": "audit"
+    "effect": "deny"
    }
   }
  },

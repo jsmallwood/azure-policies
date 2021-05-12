@@ -1,15 +1,13 @@
 {
  "properties": {
-  "displayName": "Require a tag and value is email pattern on resource groups",
   "policyType": "Custom",
   "mode": "All",
-  "description": "Enforces a required tag and its value is a email address. Does not apply to resource groups.",
   "metadata": {
    "category": "Tags",
-   "createdBy": "0657932d-6322-4410-b062-c9f117e63087",
-   "createdOn": "2021-04-27T18:02:08.7703128Z",
-   "updatedBy": "0657932d-6322-4410-b062-c9f117e63087",
-   "updatedOn": "2021-05-03T19:07:20.5541577Z"
+   "createdBy": "d1c06f51-82a8-44e8-b35e-01a428a9c890",
+   "createdOn": "2021-05-03T20:18:59.5741852Z",
+   "updatedBy": null,
+   "updatedOn": null
   },
   "parameters": {
    "tagName": {
@@ -18,6 +16,19 @@
      "displayName": "Tag Name",
      "description": "Name of the tag, such as 'environment'"
     }
+   },
+   "effectType": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Effect Type",
+     "description": "Effect Type"
+    },
+    "allowedValues": [
+     "audit",
+     "auditifnotexists",
+     "deny",
+     "disabled"
+    ]
    }
   },
   "policyRule": {
@@ -44,11 +55,11 @@
     ]
    },
    "then": {
-    "effect": "deny"
+    "effect": "[parameters('effectType')]"
    }
   }
  },
- "id": "/providers/Microsoft.Management/managementGroups/a8b7290b-8363-4333-81d5-041ac3b2c81c/providers/Microsoft.Authorization/policyDefinitions/a7c48f7a-fe50-479d-bdc7-e34d1965bd2b",
+ "id": "/providers/Microsoft.Management/managementGroups/a8b7290b-8363-4333-81d5-041ac3b2c81c/providers/Microsoft.Authorization/policyDefinitions/require-an-email-address-tag-value-on-resources",
  "type": "Microsoft.Authorization/policyDefinitions",
- "name": "a7c48f7a-fe50-479d-bdc7-e34d1965bd2b"
+ "name": "require-an-email-address-tag-value-on-resources"
 }

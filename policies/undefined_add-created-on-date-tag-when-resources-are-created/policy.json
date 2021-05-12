@@ -1,0 +1,45 @@
+{
+ "properties": {
+  "policyType": "Custom",
+  "mode": "All",
+  "metadata": {
+   "category": "Tags",
+   "createdBy": "d1c06f51-82a8-44e8-b35e-01a428a9c890",
+   "createdOn": "2021-05-03T20:16:36.998326Z",
+   "updatedBy": "d1c06f51-82a8-44e8-b35e-01a428a9c890",
+   "updatedOn": "2021-05-03T20:18:43.4823515Z"
+  },
+  "parameters": {
+   "tagName": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Tag Name",
+     "description": "Name of the tag, such as 'CreatedOnDate'"
+    },
+    "defaultValue": "CreatedOnDate"
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "exists": false
+     }
+    ]
+   },
+   "then": {
+    "effect": "append",
+    "details": [
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "value": "[concat(substring(utcNow(),5,2), '/', substring(utcNow(),8,2), '/', substring(utcNow(),0,4))]"
+     }
+    ]
+   }
+  }
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/a8b7290b-8363-4333-81d5-041ac3b2c81c/providers/Microsoft.Authorization/policyDefinitions/add-created-on-date-tag-when-resources-are-created",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "add-created-on-date-tag-when-resources-are-created"
+}

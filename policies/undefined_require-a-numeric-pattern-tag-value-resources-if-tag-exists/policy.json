@@ -1,0 +1,72 @@
+{
+ "properties": {
+  "policyType": "Custom",
+  "mode": "All",
+  "metadata": {
+   "category": "Tags",
+   "createdBy": "d1c06f51-82a8-44e8-b35e-01a428a9c890",
+   "createdOn": "2021-05-03T20:16:46.9378455Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "tagName": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Tag Name",
+     "description": "Name of the tag, such as 'environment'"
+    }
+   },
+   "effectType": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Effect Type",
+     "description": "Effect Type"
+    },
+    "allowedValues": [
+     "audit",
+     "auditifnotexists",
+     "deny",
+     "disabled"
+    ],
+    "defaultValue": "deny"
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "exists": "true"
+     },
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "notEquals": "N/A"
+     },
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "notMatch": "####"
+     },
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "notMatch": "#####"
+     },
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "notMatch": "######"
+     },
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "notMatch": "#######"
+     }
+    ]
+   },
+   "then": {
+    "effect": "[parameters('effectType')]"
+   }
+  }
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/a8b7290b-8363-4333-81d5-041ac3b2c81c/providers/Microsoft.Authorization/policyDefinitions/require-a-numeric-pattern-tag-value-resources-if-tag-exists",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "require-a-numeric-pattern-tag-value-resources-if-tag-exists"
+}

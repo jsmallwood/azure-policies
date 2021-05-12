@@ -1,15 +1,13 @@
 {
  "properties": {
-  "displayName": "Require a non-null value a Tag on resource groups",
   "policyType": "Custom",
   "mode": "All",
-  "description": "Enforces a required tag and its value on resource groups.",
   "metadata": {
    "category": "Tags",
-   "createdBy": "0657932d-6322-4410-b062-c9f117e63087",
-   "createdOn": "2021-04-27T19:34:05.590051Z",
-   "updatedBy": "0657932d-6322-4410-b062-c9f117e63087",
-   "updatedOn": "2021-05-03T19:29:29.3926501Z"
+   "createdBy": "d1c06f51-82a8-44e8-b35e-01a428a9c890",
+   "createdOn": "2021-05-03T20:16:40.5880943Z",
+   "updatedBy": "d1c06f51-82a8-44e8-b35e-01a428a9c890",
+   "updatedOn": "2021-05-03T20:18:46.1649741Z"
   },
   "parameters": {
    "tagName": {
@@ -24,7 +22,14 @@
     "metadata": {
      "displayName": "Effect Type",
      "description": "Effect Type"
-    }
+    },
+    "allowedValues": [
+     "audit",
+     "auditifnotexists",
+     "deny",
+     "disabled"
+    ],
+    "defaultValue": "deny"
    }
   },
   "policyRule": {
@@ -57,7 +62,7 @@
    }
   }
  },
- "id": "/providers/Microsoft.Management/managementGroups/a8b7290b-8363-4333-81d5-041ac3b2c81c/providers/Microsoft.Authorization/policyDefinitions/e38b2d99-97ba-41d4-9268-395966374d32",
+ "id": "/providers/Microsoft.Management/managementGroups/a8b7290b-8363-4333-81d5-041ac3b2c81c/providers/Microsoft.Authorization/policyDefinitions/require-a-non-null-tag-value-on-resource-groups",
  "type": "Microsoft.Authorization/policyDefinitions",
- "name": "e38b2d99-97ba-41d4-9268-395966374d32"
+ "name": "require-a-non-null-tag-value-on-resource-groups"
 }

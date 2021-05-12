@@ -1,0 +1,63 @@
+{
+ "properties": {
+  "policyType": "Custom",
+  "mode": "All",
+  "metadata": {
+   "category": "Tags",
+   "createdBy": "d1c06f51-82a8-44e8-b35e-01a428a9c890",
+   "createdOn": "2021-05-03T20:19:01.7728412Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "tagName": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Tag Name",
+     "description": "Name of the tag, such as 'environment'"
+    }
+   },
+   "effectType": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Effect Type",
+     "description": "Effect Type"
+    },
+    "allowedValues": [
+     "audit",
+     "auditifnotexists",
+     "deny",
+     "disabled"
+    ]
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "exists": "true"
+     },
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "notLike": "CHG*"
+     },
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "notLike": "INC*"
+     },
+     {
+      "field": "[concat('tags[', parameters('tagName'), ']')]",
+      "notLike": "RITM*"
+     }
+    ]
+   },
+   "then": {
+    "effect": "[parameters('effectType')]"
+   }
+  }
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/a8b7290b-8363-4333-81d5-041ac3b2c81c/providers/Microsoft.Authorization/policyDefinitions/require-servicenow-tag-value-on-resources-if-tag-exists",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "require-servicenow-tag-value-on-resources-if-tag-exists"
+}

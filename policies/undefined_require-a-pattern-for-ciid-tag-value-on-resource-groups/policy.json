@@ -1,0 +1,117 @@
+{
+ "properties": {
+  "policyType": "Custom",
+  "mode": "All",
+  "metadata": {
+   "category": "Tags",
+   "createdBy": "d1c06f51-82a8-44e8-b35e-01a428a9c890",
+   "createdOn": "2021-05-03T20:18:53.3654494Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "tagName": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Tag Name",
+     "description": "Name of the tag, such as 'environment'"
+    }
+   },
+   "effectType": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Effect Type",
+     "description": "Effect Type"
+    },
+    "allowedValues": [
+     "audit",
+     "auditifnotexists",
+     "deny",
+     "disabled"
+    ]
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "type",
+      "equals": "Microsoft.Resources/subscriptions/resourceGroups"
+     },
+     {
+      "not": {
+       "field": "[concat('tags[', parameters('tagName'), ']')]",
+       "match": "ASM....."
+      }
+     },
+     {
+      "not": {
+       "field": "[concat('tags[', parameters('tagName'), ']')]",
+       "match": "ASM......"
+      }
+     },
+     {
+      "not": {
+       "field": "[concat('tags[', parameters('tagName'), ']')]",
+       "match": "ASM......"
+      }
+     },
+     {
+      "not": {
+       "field": "[concat('tags[', parameters('tagName'), ']')]",
+       "match": "ASM......."
+      }
+     },
+     {
+      "not": {
+       "field": "[concat('tags[', parameters('tagName'), ']')]",
+       "match": "ASM........"
+      }
+     },
+     {
+      "not": {
+       "field": "[concat('tags[', parameters('tagName'), ']')]",
+       "match": "ASM........."
+      }
+     },
+     {
+      "not": {
+       "field": "[concat('tags[', parameters('tagName'), ']')]",
+       "match": "ASM..........."
+      }
+     },
+     {
+      "not": {
+       "field": "[concat('tags[', parameters('tagName'), ']')]",
+       "match": "ASM............"
+      }
+     },
+     {
+      "not": {
+       "field": "[concat('tags[', parameters('tagName'), ']')]",
+       "match": "ASM............."
+      }
+     },
+     {
+      "not": {
+       "field": "[concat('tags[', parameters('tagName'), ']')]",
+       "match": "ASM.............."
+      }
+     },
+     {
+      "not": {
+       "field": "[concat('tags[', parameters('tagName'), ']')]",
+       "match": "ASM.............."
+      }
+     }
+    ]
+   },
+   "then": {
+    "effect": "[parameters('effectType')]"
+   }
+  }
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/a8b7290b-8363-4333-81d5-041ac3b2c81c/providers/Microsoft.Authorization/policyDefinitions/require-a-pattern-for-ciid-tag-value-on-resource-groups",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "require-a-pattern-for-ciid-tag-value-on-resource-groups"
+}
