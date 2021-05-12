@@ -1,0 +1,35 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "identity": {
+  "principalId": "44147d91-e581-4710-a701-1d291ea0c058",
+  "tenantId": "a8b7290b-8363-4333-81d5-041ac3b2c81c",
+  "type": "SystemAssigned"
+ },
+ "properties": {
+  "displayName": "CUSTOM - Tag Initiative",
+  "policyDefinitionId": "/providers/Microsoft.Management/managementGroups/a8b7290b-8363-4333-81d5-041ac3b2c81c/providers/Microsoft.Authorization/policySetDefinitions/f6451d30adba44ca99e5c540",
+  "scope": "/providers/Microsoft.Management/managementGroups/a8b7290b-8363-4333-81d5-041ac3b2c81c",
+  "notScopes": [],
+  "parameters": {
+   "effectType": {
+    "value": "deny"
+   }
+  },
+  "metadata": {
+   "assignedBy": "jason.l.smallwood jason.l.smallwood",
+   "parameterScopes": {},
+   "createdBy": "d1c06f51-82a8-44e8-b35e-01a428a9c890",
+   "createdOn": "2021-05-12T13:35:42.5195226Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/providers/Microsoft.Management/managementGroups/a8b7290b-8363-4333-81d5-041ac3b2c81c/providers/Microsoft.Authorization/policyAssignments/c69c760c86144df68ad32658",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "c69c760c86144df68ad32658",
+ "location": "eastus"
+}
